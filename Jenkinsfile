@@ -4,27 +4,27 @@ pipeline {
     stage ('Git-Checkout') {
       steps{
         git url: 'https://github.com/Sai-githubuser/newpythonflask.git'
-        echo "Checkout successful";
+        echo "Checkout successful"
       }
     }
     stage ('Compile') {
       steps{
-        bat label: '', script: 'mvvw compile'
-        echo "test successful';
+        bat label: '', script: 'mvn compile'
+        echo "test successful'
         
       }
     }
     stage ('Build') {
       steps{
-        bat label: '', script: 'mvnw clean'
-        bat label: '', script: 'mvnw package'
+        bat label: '', script: 'mvn clean'
+        bat label: '', script: 'mvn package'
         echo "build successful";
         
       }
     }
     stage ('Test') {
       steps{
-        bat label: '', script: 'mvnw test'
+        bat label: '', script: 'mvn test'
         echo "test successful";
         
       }
